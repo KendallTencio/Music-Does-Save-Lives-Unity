@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 718853371}
   - component: {fileID: 718853370}
   - component: {fileID: 718853369}
+  - component: {fileID: 718853372}
   m_Layer: 0
   m_Name: F
   m_TagString: Untagged
@@ -297,6 +298,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718853367}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &718853372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718853367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50416272c9270934c9a1f76f71dd07c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4228783323020534256, guid: 412c669a10249e943b741092c39b9cac, type: 3}
+  laserDistance: 0.2
+  timeBetweenFires: 0.3
+  timeUntilNextFire: 0
+  shootButton: 66000000
 --- !u!1 &869465348
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +327,7 @@ GameObject:
   - component: {fileID: 869465352}
   - component: {fileID: 869465351}
   - component: {fileID: 869465350}
+  - component: {fileID: 869465353}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -390,6 +409,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869465348}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &869465353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869465348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50416272c9270934c9a1f76f71dd07c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4228783323020534256, guid: 412c669a10249e943b741092c39b9cac, type: 3}
+  laserDistance: 0.2
+  timeBetweenFires: 0.3
+  timeUntilNextFire: 0
+  shootButton: 6c000000
 --- !u!1 &883309091
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +751,7 @@ GameObject:
   - component: {fileID: 1238856115}
   - component: {fileID: 1238856114}
   - component: {fileID: 1238856113}
+  - component: {fileID: 1238856116}
   m_Layer: 0
   m_Name: G
   m_TagString: Untagged
@@ -796,6 +833,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238856111}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1238856116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238856111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50416272c9270934c9a1f76f71dd07c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4228783323020534256, guid: 412c669a10249e943b741092c39b9cac, type: 3}
+  laserDistance: 0.2
+  timeBetweenFires: 0.3
+  timeUntilNextFire: 0
+  shootButton: 6a000000
 --- !u!1 &1243248369
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +862,7 @@ GameObject:
   - component: {fileID: 1243248373}
   - component: {fileID: 1243248372}
   - component: {fileID: 1243248371}
+  - component: {fileID: 1243248374}
   m_Layer: 0
   m_Name: C
   m_TagString: Untagged
@@ -889,6 +944,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243248369}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1243248374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243248369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50416272c9270934c9a1f76f71dd07c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4228783323020534256, guid: 412c669a10249e943b741092c39b9cac, type: 3}
+  laserDistance: 0.2
+  timeBetweenFires: 0.3
+  timeUntilNextFire: 0
+  shootButton: 61000000
 --- !u!1 &1483769887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1093,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1640180506}
   - component: {fileID: 1640180505}
-  - component: {fileID: 1640180507}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -1070,20 +1141,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1640180507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640180504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3c1cf9164d14c448cbe71270c359ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 10
-  bullet: {fileID: -5006648840122411952, guid: 412c669a10249e943b741092c39b9cac, type: 3}
 --- !u!1 &1668475691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1339,7 @@ GameObject:
   - component: {fileID: 1893340106}
   - component: {fileID: 1893340105}
   - component: {fileID: 1893340104}
+  - component: {fileID: 1893340107}
   m_Layer: 0
   m_Name: A
   m_TagString: Untagged
@@ -1363,6 +1421,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893340102}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1893340107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893340102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50416272c9270934c9a1f76f71dd07c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4228783323020534256, guid: 412c669a10249e943b741092c39b9cac, type: 3}
+  laserDistance: 0.2
+  timeBetweenFires: 0.3
+  timeUntilNextFire: 0
+  shootButton: 6b000000
 --- !u!1 &2043082571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1450,7 @@ GameObject:
   - component: {fileID: 2043082575}
   - component: {fileID: 2043082574}
   - component: {fileID: 2043082573}
+  - component: {fileID: 2043082576}
   m_Layer: 0
   m_Name: E
   m_TagString: Untagged
@@ -1456,6 +1532,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043082571}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2043082576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043082571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50416272c9270934c9a1f76f71dd07c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4228783323020534256, guid: 412c669a10249e943b741092c39b9cac, type: 3}
+  laserDistance: 0.2
+  timeBetweenFires: 0.3
+  timeUntilNextFire: 0
+  shootButton: 64000000
 --- !u!1 &2056539511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1561,7 @@ GameObject:
   - component: {fileID: 2056539515}
   - component: {fileID: 2056539514}
   - component: {fileID: 2056539513}
+  - component: {fileID: 2056539516}
   m_Layer: 0
   m_Name: D
   m_TagString: Untagged
@@ -1549,3 +1643,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056539511}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2056539516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056539511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50416272c9270934c9a1f76f71dd07c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4228783323020534256, guid: 412c669a10249e943b741092c39b9cac, type: 3}
+  laserDistance: 0.2
+  timeBetweenFires: 0.3
+  timeUntilNextFire: 0
+  shootButton: 73000000
