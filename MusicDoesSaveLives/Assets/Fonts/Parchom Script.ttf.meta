@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b8933cefc2eade74fa0df5a50b76294b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pachom Script
+  fontNames:
+  - Pachom Script
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a6e4073463ee9544d810e8e1a9c5fe35, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
