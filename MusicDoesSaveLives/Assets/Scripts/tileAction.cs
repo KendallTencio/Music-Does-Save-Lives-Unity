@@ -5,26 +5,27 @@ using UnityEngine;
 public class tileAction : MonoBehaviour
 {
     public GameObject colorCube;
-    public GameObject cTile;
-    public GameObject dTile;
-    public GameObject eTile;
-    public GameObject fTile;
-    public GameObject gTile;
-    public GameObject aTile;
-    public GameObject bTile;
-    // Use this for initialization
+    GameObject cTile;
+    GameObject dTile;
+    GameObject eTile;
+    GameObject fTile;
+    GameObject gTile;
+    GameObject aTile;
+    GameObject bTile;
+
     void Start()
     {
-        cTile.GetComponent<Renderer>().material.color = Color.white;
-        dTile.GetComponent<Renderer>().material.color = Color.white;
-        eTile.GetComponent<Renderer>().material.color = Color.white;
-        fTile.GetComponent<Renderer>().material.color = Color.white;
-        gTile.GetComponent<Renderer>().material.color = Color.white;
-        aTile.GetComponent<Renderer>().material.color = Color.white;
-        bTile.GetComponent<Renderer>().material.color = Color.white;
+        cTile = this.gameObject.transform.GetChild(0).gameObject;
+        dTile = this.gameObject.transform.GetChild(1).gameObject;
+        eTile = this.gameObject.transform.GetChild(2).gameObject;
+        fTile = this.gameObject.transform.GetChild(3).gameObject;
+        gTile = this.gameObject.transform.GetChild(4).gameObject;
+        aTile = this.gameObject.transform.GetChild(5).gameObject;
+        bTile = this.gameObject.transform.GetChild(6).gameObject;
+
+        putWhiteColorTiles();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -71,12 +72,14 @@ public class tileAction : MonoBehaviour
         }
     }
 
-    
-
-
     private IEnumerator cleanTile()
     {
         yield return new WaitForSeconds(0.5f);
+        putWhiteColorTiles();
+    }
+
+    void putWhiteColorTiles()
+    {
         cTile.GetComponent<Renderer>().material.color = Color.white;
         dTile.GetComponent<Renderer>().material.color = Color.white;
         eTile.GetComponent<Renderer>().material.color = Color.white;
