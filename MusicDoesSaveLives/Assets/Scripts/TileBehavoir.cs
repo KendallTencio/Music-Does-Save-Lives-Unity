@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class TileBehavoir : MonoBehaviour
 {
-    // Start is called before the first frame update
-    //public Rigidbody bullet;
     //Disparo
     public Transform bullet;
     public float laserDistance = 0.2f;
@@ -16,15 +14,22 @@ public class TileBehavoir : MonoBehaviour
     private AudioSource audioSource;
     //public List<KeyCode> shootButton;
     public List<KeyCode> shootButton;
+
+    //Variables para colores
+    public GameObject colorCube;
+    public Material colorTile;
+
     //Funcionas básicas de Unity    
     void  Start()
     {
-        audioSource= GetComponent<AudioSource>();
+        GetComponent<Renderer>().material.color = Color.white;
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
         Fire(); 
     }
+
     //Funciones propias
     void Fire(){      
         foreach(KeyCode key in shootButton){
@@ -39,6 +44,9 @@ public class TileBehavoir : MonoBehaviour
     }
     void ShootLaser(){        
         audioSource.Play();
+
+        ChangeColor();
+
         Vector3 laserPos = this.transform.position; //la pos de la tale        
         float rotationAngle = this.transform.localEulerAngles.z - 90;        
         laserPos.x += Mathf.Cos(rotationAngle * Mathf.Deg2Rad) * laserDistance;
@@ -46,4 +54,17 @@ public class TileBehavoir : MonoBehaviour
         Instantiate(bullet,laserPos,this.transform.rotation);
 
     }    
+
+    void ChangeColor()
+    {
+        GetComponent<Renderer>().material.color = Color.gray;
+        StartCoroutine(cleanTile());
+        colorCube.GetComponent<Renderer>().material = colorTile;
+    }
+
+    private IEnumerator cleanTile()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<Renderer>().material.color = Color.white;
+    }
 }

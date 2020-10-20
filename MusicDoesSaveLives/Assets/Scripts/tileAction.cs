@@ -12,6 +12,7 @@ public class tileAction : MonoBehaviour
     GameObject gTile;
     GameObject aTile;
     GameObject bTile;
+    GameObject space;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class tileAction : MonoBehaviour
         gTile = this.gameObject.transform.GetChild(4).gameObject;
         aTile = this.gameObject.transform.GetChild(5).gameObject;
         bTile = this.gameObject.transform.GetChild(6).gameObject;
+        space = this.gameObject.transform.GetChild(7).gameObject;
 
         putWhiteColorTiles();
     }
@@ -70,6 +72,11 @@ public class tileAction : MonoBehaviour
             StartCoroutine(cleanTile());
             colorCube.GetComponent<Renderer>().material.color = Color.cyan;
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            space.GetComponent<Renderer>().material.color = Color.gray;
+            StartCoroutine(cleanTile());
+        }
     }
 
     private IEnumerator cleanTile()
@@ -87,5 +94,6 @@ public class tileAction : MonoBehaviour
         gTile.GetComponent<Renderer>().material.color = Color.white;
         aTile.GetComponent<Renderer>().material.color = Color.white;
         bTile.GetComponent<Renderer>().material.color = Color.white;
+        space.GetComponent<Renderer>().material.color = Color.white;
     }
 }
