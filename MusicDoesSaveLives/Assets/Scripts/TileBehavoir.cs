@@ -12,7 +12,6 @@ public class TileBehavoir : MonoBehaviour
     public float timeBetweenFires = 0.3f;
     public float timeUntilNextFire = 0.0f;
     private AudioSource audioSource;
-    //public List<KeyCode> shootButton;
     public List<KeyCode> shootButton;
 
     //Variables para colores
