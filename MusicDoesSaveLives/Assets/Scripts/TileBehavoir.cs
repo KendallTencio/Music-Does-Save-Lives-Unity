@@ -16,13 +16,15 @@ public class TileBehavoir : MonoBehaviour
 
     //Variables para colores
     public GameObject colorCube;
-    public Material colorTile;
+    public SpriteRenderer SRObject;
+    public Sprite defaultImage;
+    public Sprite pressedImage;
 
     //Funcionas básicas de Unity    
     void  Start()
     {
-        GetComponent<Renderer>().material.color = Color.white;
-        audioSource = GetComponent<AudioSource>();
+        SRObject = GetComponent<SpriteRenderer>();
+        //audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -42,28 +44,27 @@ public class TileBehavoir : MonoBehaviour
         timeUntilNextFire -= Time.deltaTime;
     }
     void ShootLaser(){        
-        audioSource.Play();
+       // audioSource.Play();
 
-        ChangeColor();
+        PressedTile();
 
-        Vector3 laserPos = this.transform.position; //la pos de la tale        
-        float rotationAngle = this.transform.localEulerAngles.z - 90;        
-        laserPos.x += Mathf.Cos(rotationAngle * Mathf.Deg2Rad) * laserDistance;
-        laserPos.y += Mathf.Sin(rotationAngle * Mathf.Deg2Rad) * laserDistance;
-        Instantiate(bullet,laserPos,this.transform.rotation);
+     //   Vector3 laserPos = this.transform.position; //la pos de la tale        
+     //   float rotationAngle = this.transform.localEulerAngles.z - 90;        
+     //   laserPos.x += Mathf.Cos(rotationAngle * Mathf.Deg2Rad) * laserDistance;
+     //   laserPos.y += Mathf.Sin(rotationAngle * Mathf.Deg2Rad) * laserDistance;
+     //   Instantiate(bullet,laserPos,this.transform.rotation);
 
     }    
 
-    void ChangeColor()
+    void PressedTile()
     {
-        GetComponent<Renderer>().material.color = Color.gray;
-        StartCoroutine(cleanTile());
-        colorCube.GetComponent<Renderer>().material = colorTile;
+        SRObject.sprite = pressedImage;
+        StartCoroutine(waitForTile());
     }
 
-    private IEnumerator cleanTile()
+    private IEnumerator waitForTile()
     {
         yield return new WaitForSeconds(0.5f);
-        GetComponent<Renderer>().material.color = Color.white;
+        SRObject.sprite = defaultImage;
     }
 }

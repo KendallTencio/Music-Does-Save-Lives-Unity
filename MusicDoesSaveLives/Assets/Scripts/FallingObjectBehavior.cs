@@ -8,9 +8,10 @@ public class FallingObjectBehavior : MonoBehaviour
     public bool canBePressed;
     public KeyCode keyPressed;
 
+
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -20,6 +21,8 @@ public class FallingObjectBehavior : MonoBehaviour
             if (canBePressed)
             {
                 gameObject.SetActive(false);
+
+                GameManager.instance.NoteHit();
             }
         }
     }
@@ -38,6 +41,8 @@ public class FallingObjectBehavior : MonoBehaviour
         if (other.tag == "Detector")
         {
             canBePressed = false;
+
+            GameManager.instance.NoteMissed();
         }
     }
 }
