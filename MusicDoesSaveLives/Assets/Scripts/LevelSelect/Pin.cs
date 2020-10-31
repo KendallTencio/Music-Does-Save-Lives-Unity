@@ -17,6 +17,7 @@ public class Pin : MonoBehaviour
 {
     public bool IsAutomatic;
     public string SceneName;
+    public int pinNumber;
 
     public Pin UpPin;
     public Pin DownPin;
@@ -70,17 +71,27 @@ public class Pin : MonoBehaviour
         return _pinDirections.FirstOrDefault(x => x.Value != null && x.Value != pin).Value;
     }
 
-
     // Draw lines between connected pins
     void OnDrawGizmos()
     {
-        if (UpPin != null) DrawLine(UpPin);
-        if (RightPin != null) DrawLine(RightPin);
-        if (DownPin != null) DrawLine(DownPin);
-        if (LeftPin != null) DrawLine(LeftPin);
+        if (UpPin != null)
+        {
+            DrawLine(UpPin);
+        }
+        if (RightPin != null)
+        {
+            DrawLine(RightPin);
+        }
+        if (DownPin != null)
+        {
+            DrawLine(DownPin);
+        }
+        if (LeftPin != null)
+        {
+            DrawLine(LeftPin);
+        }
     }
 
-    // Draw one pin line
     protected void DrawLine(Pin pin)
     {
         Gizmos.color = Color.white;

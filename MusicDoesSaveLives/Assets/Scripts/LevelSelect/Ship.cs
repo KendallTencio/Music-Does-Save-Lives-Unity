@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
-    public float Speed = 5f;
+    public float ShipSpeed = 5f;
     public bool IsMoving { get; private set; }
-
     public Pin CurrentPin { get; private set; }
+    public SpriteRenderer ShipSR;
     private Pin _targetPin;
     private MapManager _mapManager;
-
 
     public void Initialise(MapManager mapManager, Pin startPin)
     {
@@ -18,34 +17,35 @@ public class Ship : MonoBehaviour
         SetCurrentPin(startPin);
     }
 
-    private void Update()
+    void Start()
     {
-        if (_targetPin == null) return;
+        ShipSR = GetComponent<SpriteRenderer>();
+    }
 
-        // Get the characters current position and the targets position
-        var currentPosition = transform.position;
-        var targetPosition = _targetPin.transform.position;
+    void Update()
+    {
+        if (_targetPin != null)
+        {
+            var currentPosition = transform.position;
+            var targetPosition = _targetPin.transform.position;
 
-        // If the character isn't that close to the target move closer
-        if (Vector3.Distance(currentPosition, targetPosition) > .02f)
-        {
-            transform.position = Vector3.MoveTowards(
-                currentPosition,
-                targetPosition,
-                Time.deltaTime * Speed
-            );
-        }
-        else
-        {
-            if (_targetPin.IsAutomatic)
+            // If the character isn't that close to the target move closer
+            if (Vector3.Distance(currentPosition, targetPosition) > .02f)
             {
-                // Get a direction to keep moving in
-                var pin = _targetPin.GetNextPin(CurrentPin);
-                MoveToPin(pin);
+                transform.position = Vector3.MoveTowards(currentPosition, targetPosition, Time.deltaTime * ShipSpeed);
             }
             else
             {
-                SetCurrentPin(_targetPin);
+                if (_targetPin.IsAutomatic)
+                {
+                    // Get a direction to keep moving in
+                    var pin = _targetPin.GetNextPin(CurrentPin);
+                    MoveToPin(pin);
+                }
+                else
+                {
+                    SetCurrentPin(_targetPin);
+                }
             }
         }
     }
@@ -54,22 +54,29 @@ public class Ship : MonoBehaviour
     // If it does the move there
     public void TrySetDirection(Direction direction)
     {
-        // Try get the next pin
         var pin = CurrentPin.GetPinInDirection(direction);
 
         // If there is a pin then move to it
-        if (pin == null) return;
-        MoveToPin(pin);
+        if (pin != null)
+        {
+            MoveToPin(pin);
+        }
     }
 
-    // Move to a new pin
-    private void MoveToPin(Pin pin)
+    void MoveToPin(Pin pin)
     {
+        if(CurrentPin.pinNumber > pin.pinNumber)
+        {
+            ShipSR.flipX = true;
+        }
+        else
+        {
+            ShipSR.flipX = false;
+        }
         _targetPin = pin;
         IsMoving = true;
     }
 
-    // Set the current pin
     public void SetCurrentPin(Pin pin)
     {
         CurrentPin = pin;
@@ -77,8 +84,12 @@ public class Ship : MonoBehaviour
         transform.position = pin.transform.position;
         IsMoving = false;
 
-        // Tell the map manager that
-        // the current pin has changed
+        // Tell the map manager that the current pin has changed
         _mapManager.UpdateGui();
+    }
+
+    public void upDownAnim()
+    {
+
     }
 }

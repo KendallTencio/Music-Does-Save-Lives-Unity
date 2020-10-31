@@ -9,26 +9,22 @@ public class MapManager : MonoBehaviour
     public Pin StartPin;
     public Text SelectedLevelText;
 
-    private void Start()
+    void Start()
     {
-        // Pass a ref and default the player Starting Pin
         Ship.Initialise(this, StartPin);
     }
 
-    private void Update()
+    void Update()
     {
-        // Only check input when character is stopped
-        if (Ship.IsMoving)
+        // Only check for input when character is stopped
+        if (!Ship.IsMoving)
         {
-            return;
-        }
-
-        // First thing to do is try get the player input
-        CheckForInput();
+            CheckForInput();
+            Ship.upDownAnim();
+        }       
     }
 
-    // Check if the player has pressed a button
-    private void CheckForInput()
+    void CheckForInput()
     {
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -51,6 +47,6 @@ public class MapManager : MonoBehaviour
     // Update the Text
     public void UpdateGui()
     {
-        SelectedLevelText.text = string.Format("Current Level: {0}", Ship.CurrentPin);
+        SelectedLevelText.text = string.Format("Current Level: {0}", Ship.CurrentPin.pinNumber);
     }
 }

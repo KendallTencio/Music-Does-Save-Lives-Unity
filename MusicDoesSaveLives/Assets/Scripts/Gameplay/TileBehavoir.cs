@@ -24,7 +24,6 @@ public class TileBehavoir : MonoBehaviour
     //Lightning variables
     public GameObject lightning;
 
-    //Funcionas básicas de Unity    
     void  Start()
     {
         SRObject = GetComponent<SpriteRenderer>();
@@ -49,7 +48,6 @@ public class TileBehavoir : MonoBehaviour
     }
     void ShootLaser(){        
        // audioSource.Play();
-
         PressedTile();
 
      //   Vector3 laserPos = this.transform.position; //la pos de la tale        
