@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     public void NoteHit()
     {
         Debug.Log("Hit On Time");
-
         multiplierTracker++;
 
         if (currentMultiplier - 1 < multiplierThresholds.Length)
@@ -58,7 +57,6 @@ public class GameManager : MonoBehaviour
                 currentMultiplier++;
             }
         }
-
         multiText.text = "Multiplier: x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;
