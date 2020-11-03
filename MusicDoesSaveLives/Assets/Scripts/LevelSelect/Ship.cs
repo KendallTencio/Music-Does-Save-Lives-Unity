@@ -87,9 +87,4 @@ public class Ship : MonoBehaviour
         // Tell the map manager that the current pin has changed
         _mapManager.UpdateGui();
     }
-
-    public void upDownAnim()
-    {
-
-    }
 }

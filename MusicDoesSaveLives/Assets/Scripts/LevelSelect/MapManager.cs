@@ -20,7 +20,6 @@ public class MapManager : MonoBehaviour
         if (!Ship.IsMoving)
         {
             CheckForInput();
-            Ship.upDownAnim();
         }       
     }
 

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
-        scoreText.text = "Score: 0";
+        scoreText.text = "Lives saved: 0";
         currentMultiplier = 1;
     }
 
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         multiText.text = "Multiplier: x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;
-        scoreText.text = "Score" + currentScore;
+        scoreText.text = "Lives saved: " + currentScore;
     }
 
     public void NoteMissed()

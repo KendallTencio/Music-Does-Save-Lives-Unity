@@ -28,7 +28,6 @@ public class TileBehavoir : MonoBehaviour
     {
         SRObject = GetComponent<SpriteRenderer>();
         lightning.SetActive(false);
-        //audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -38,7 +37,8 @@ public class TileBehavoir : MonoBehaviour
     void Fire(){      
         foreach(KeyCode key in shootButton){
             if(Input.GetKey(key) && timeUntilNextFire < 0) {
-            //shot
+            
+            // Shot
             timeUntilNextFire = timeBetweenFires;
             ShootLaser();   
             break;  
@@ -47,7 +47,6 @@ public class TileBehavoir : MonoBehaviour
         timeUntilNextFire -= Time.deltaTime;
     }
     void ShootLaser(){        
-       // audioSource.Play();
         PressedTile();
 
      //   Vector3 laserPos = this.transform.position; //la pos de la tale        
@@ -55,7 +54,6 @@ public class TileBehavoir : MonoBehaviour
      //   laserPos.x += Mathf.Cos(rotationAngle * Mathf.Deg2Rad) * laserDistance;
      //   laserPos.y += Mathf.Sin(rotationAngle * Mathf.Deg2Rad) * laserDistance;
      //   Instantiate(bullet,laserPos,this.transform.rotation);
-
     }    
 
     void PressedTile()
