@@ -6,6 +6,7 @@ public class CollissionPlatformBehavior : MonoBehaviour
 {
 
     public GameObject explObj;
+    public int maxDamage = 6;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -19,10 +20,9 @@ public class CollissionPlatformBehavior : MonoBehaviour
 
     void PlayExplosion(Vector3 tp)
     {
-        //Instancia la explosion
-        GameObject explosion = (GameObject)Instantiate(explObj);
-        //Se coloca la explosion
+        GameObject explosion = (GameObject) Instantiate(explObj);
         explosion.transform.position = tp;
+        maxDamage -= 2;
         StartCoroutine(destroyGO(explosion));
     }
 

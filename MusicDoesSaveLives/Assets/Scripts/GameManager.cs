@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     public int multiplierTracker;
     public int[] multiplierThresholds;
 
+    //DamageManagement
+    public CollissionPlatformBehavior colPlatf;
+    public GameObject brokenGlass1;
+    public GameObject brokenGlass2;
+
     void Start()
     {
         instance = this;
@@ -42,6 +47,7 @@ public class GameManager : MonoBehaviour
                 bgMusic.Play();
             }
         }
+        checkShipDamageStatus();
     }
 
     public void NoteHit()
@@ -70,5 +76,22 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         multiplierTracker = 0;
         multiText.text = "Multiplier: x" + currentMultiplier;
+    }
+
+    void checkShipDamageStatus()
+    {
+        if(colPlatf.maxDamage == 2)
+        {
+            brokenGlass1.SetActive(false);
+            brokenGlass2.SetActive(true);
+        }
+        else if (colPlatf.maxDamage == 4)
+        {
+            brokenGlass1.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("So you have chosen death...");
+        }
     }
 }
