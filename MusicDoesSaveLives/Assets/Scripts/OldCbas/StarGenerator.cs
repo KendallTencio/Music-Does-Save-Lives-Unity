@@ -33,7 +33,7 @@ public class StarGenerator : MonoBehaviour
 		//Fijar la posicion de la estrella
 		star.transform.position= new Vector2(Random.Range(min.x,max.x),Random.Range(min.y,max.y));
 		//Fijar una velocidad random
-		star.GetComponent<Star>().speed=-(1f*Random.value+0.5f);
+		star.GetComponent<Star>().speed=-(1f*Random.value+0.09f);
 		//Hacer la estrella hija del StarGeneratorGO
 		star.transform.parent=transform;
 	}
