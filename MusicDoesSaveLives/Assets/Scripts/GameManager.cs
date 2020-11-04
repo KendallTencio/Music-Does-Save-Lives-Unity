@@ -80,14 +80,19 @@ public class GameManager : MonoBehaviour
 
     void checkShipDamageStatus()
     {
-        if(colPlatf.maxDamage == 2)
+        if (colPlatf.realDamage == colPlatf.maxDamage)
+        {
+            brokenGlass1.SetActive(false);
+            brokenGlass2.SetActive(false);
+        }
+        else if (colPlatf.realDamage == 2)
+        {
+            brokenGlass1.SetActive(true);
+        }
+        else if (colPlatf.realDamage == 1)
         {
             brokenGlass1.SetActive(false);
             brokenGlass2.SetActive(true);
-        }
-        else if (colPlatf.maxDamage == 4)
-        {
-            brokenGlass1.SetActive(true);
         }
         else
         {

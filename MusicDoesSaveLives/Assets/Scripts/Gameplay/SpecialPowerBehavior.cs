@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class SpecialPowerBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //SpecialPowerList 
+
+
+    //DamageManagement
+    private GameObject repairingRobot;
+    public CollissionPlatformBehavior colPlatf;
+
     void Start()
     {
-        
+        repairingRobot = GameObject.FindWithTag("RRobot");
+        repairingRobot.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("c"))
+        {
+            repairFrontGlass();
+        }
+    }
+
+    void repairFrontGlass()
+    {
+        repairingRobot.SetActive(true);
+        StartCoroutine(repairForSeconds());
+    }
+
+    private IEnumerator repairForSeconds()
+    {
+        yield return new WaitForSeconds(2.9f);
+        repairingRobot.SetActive(false);
+        colPlatf.realDamage = colPlatf.maxDamage;
     }
 }
