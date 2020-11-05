@@ -3303,7 +3303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explObj: {fileID: 8132661995522703033, guid: 8adaeb4c39d85544092012990bb88241, type: 3}
-  maxDamage: 6
+  maxDamage: 3
   realDamage: 3
 --- !u!1 &1442001191
 GameObject:

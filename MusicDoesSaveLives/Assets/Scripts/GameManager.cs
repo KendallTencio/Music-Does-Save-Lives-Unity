@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
             brokenGlass1.SetActive(false);
             brokenGlass2.SetActive(true);
         }
-        else
+        else if(colPlatf.realDamage == 0)
         {
             Debug.Log("So you have chosen death...");
         }
