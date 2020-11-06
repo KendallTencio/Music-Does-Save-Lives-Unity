@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int scorePerNote = 100;
 
     //Multiplier 
+    private int notesCounter = 0;
     public int currentMultiplier;
     public int multiplierTracker;
     public int[] multiplierThresholds;
@@ -27,6 +28,9 @@ public class GameManager : MonoBehaviour
     public CollissionPlatformBehavior colPlatf;
     public GameObject brokenGlass1;
     public GameObject brokenGlass2;
+
+    //SpecialPower
+    public SpecialPowerBehavior spb;
 
     void Start()
     {
@@ -54,6 +58,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Hit On Time");
         multiplierTracker++;
+        notesCounter++;
 
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
@@ -63,6 +68,20 @@ public class GameManager : MonoBehaviour
                 currentMultiplier++;
             }
         }
+
+        if(notesCounter == 2)
+        {
+            spb.lightUpSpecialPower(1);
+        }
+        else if (notesCounter == 5)
+        {
+            spb.lightUpSpecialPower(2);
+        }
+        else if (notesCounter == 8)
+        {
+            spb.lightUpSpecialPower(3);
+        }
+
         multiText.text = "Multiplier: x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;
