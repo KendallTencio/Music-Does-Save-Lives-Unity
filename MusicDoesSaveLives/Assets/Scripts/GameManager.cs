@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int scorePerNote = 100;
 
     //Multiplier 
+    private int notesCounter = 0;
     public int currentMultiplier;
     public int multiplierTracker;
     public int[] multiplierThresholds;
@@ -28,12 +29,20 @@ public class GameManager : MonoBehaviour
     public GameObject brokenGlass1;
     public GameObject brokenGlass2;
 
+    //SpecialPower
+    public SpecialPowerBehavior spb;
+
+    //Game Over Screen
+    public GameObject gameOverScreen;
+
     void Start()
     {
         instance = this;
 
         scoreText.text = "Lives saved: 0";
         currentMultiplier = 1;
+
+        gameOverScreen.SetActive(false);
     }
 
     void Update(){
@@ -54,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Hit On Time");
         multiplierTracker++;
+        notesCounter++;
 
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
@@ -63,6 +73,20 @@ public class GameManager : MonoBehaviour
                 currentMultiplier++;
             }
         }
+
+        if(notesCounter == 2)
+        {
+            spb.lightUpSpecialPower(1);
+        }
+        else if (notesCounter == 5)
+        {
+            spb.lightUpSpecialPower(2);
+        }
+        else if (notesCounter == 8)
+        {
+            spb.lightUpSpecialPower(3);
+        }
+
         multiText.text = "Multiplier: x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;
@@ -96,6 +120,9 @@ public class GameManager : MonoBehaviour
         }
         else if(colPlatf.realDamage == 0)
         {
+            bs.hasStarted = false;
+            bgMusic.Stop();
+            gameOverScreen.SetActive(true);
             Debug.Log("So you have chosen death...");
         }
     }

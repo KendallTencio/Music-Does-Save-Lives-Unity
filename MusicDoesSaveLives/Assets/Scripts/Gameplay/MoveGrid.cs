@@ -20,6 +20,11 @@ public class MoveGrid : MonoBehaviour
         Scroll();
     }
 
+    public void UpdateScrollSpeed(float newSpeed)
+    {
+        scroll_Speed = newSpeed;
+    }
+
     void Scroll()
     {
         x_Scroll = Time.time * scroll_Speed;
