@@ -28,7 +28,7 @@ public class SpecialPowerBehavior : MonoBehaviour
     //Light Speed
     public GameObject lightSpeedGO;
     public MoveGrid mgVaporwave;
-
+    public PlanetBehavior pBehav;
 
     void Start()
     {
@@ -92,6 +92,7 @@ public class SpecialPowerBehavior : MonoBehaviour
     {
         lightSpeedGO.SetActive(true);
         mgVaporwave.UpdateScrollSpeed(3f);
+        pBehav.expansionRate = 1.01f;
         StartCoroutine(lightActivatedForSeconds());
         lightSpeedGained = false;
     }
@@ -102,6 +103,7 @@ public class SpecialPowerBehavior : MonoBehaviour
         mgVaporwave.UpdateScrollSpeed(0.3f);
         lightSpeedGO.SetActive(false);
         lsGO.sprite = nonePower;
+        pBehav.expansionRate = pBehav.expansionRateBackup;
     }
 
     public void lightUpSpecialPower(int numPower)

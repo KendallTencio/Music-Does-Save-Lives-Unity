@@ -32,12 +32,17 @@ public class GameManager : MonoBehaviour
     //SpecialPower
     public SpecialPowerBehavior spb;
 
+    //Game Over Screen
+    public GameObject gameOverScreen;
+
     void Start()
     {
         instance = this;
 
         scoreText.text = "Lives saved: 0";
         currentMultiplier = 1;
+
+        gameOverScreen.SetActive(false);
     }
 
     void Update(){
@@ -115,6 +120,9 @@ public class GameManager : MonoBehaviour
         }
         else if(colPlatf.realDamage == 0)
         {
+            bs.hasStarted = false;
+            bgMusic.Stop();
+            gameOverScreen.SetActive(true);
             Debug.Log("So you have chosen death...");
         }
     }
