@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/LevelSelectScreen.unity
+- path: Assets/Scenes/TextScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
