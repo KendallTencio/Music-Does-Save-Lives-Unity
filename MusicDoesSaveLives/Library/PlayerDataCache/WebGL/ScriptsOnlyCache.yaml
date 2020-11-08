@@ -6,11 +6,15 @@ ScriptsOnlyBuild:
     - CollissionPlatformBehavior
     - FallingObjectBehavior
     - GameManager
+    - LevelLoader
     - MapManager
     - MoveGrid
     - Pin
+    - PlanetBehavior
+    - ShieldBehavior
     - Ship
     - ShootBehavoir
+    - SpecialPowerBehavior
     - Star
     - StarGenerator
     - TileBehavoir
@@ -39,6 +43,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/GameplayScreen.unity:
@@ -91,21 +96,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 12032}
+      Script: {instanceID: 11742}
     - Class: 114
-      Script: {instanceID: 12182}
+      Script: {instanceID: 12034}
     - Class: 114
-      Script: {instanceID: 12780}
+      Script: {instanceID: 12184}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 13644}
+      Script: {instanceID: 12784}
     - Class: 114
-      Script: {instanceID: 13660}
+      Script: {instanceID: 12884}
     - Class: 114
-      Script: {instanceID: 13702}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 14274}
+      Script: {instanceID: 13650}
+    - Class: 114
+      Script: {instanceID: 13666}
+    - Class: 114
+      Script: {instanceID: 13708}
+    - Class: 114
+      Script: {instanceID: 14282}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -162,19 +173,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11604}
     - Class: 114
-      Script: {instanceID: 12182}
+      Script: {instanceID: 12184}
     - Class: 114
-      Script: {instanceID: 13020}
+      Script: {instanceID: 13026}
     - Class: 114
-      Script: {instanceID: 13314}
-    - Class: 114
-      Script: {instanceID: 13654}
+      Script: {instanceID: 13320}
     - Class: 114
       Script: {instanceID: 13660}
     - Class: 114
-      Script: {instanceID: 14160}
+      Script: {instanceID: 13666}
     - Class: 114
-      Script: {instanceID: 14274}
+      Script: {instanceID: 14168}
+    - Class: 114
+      Script: {instanceID: 14282}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -210,9 +221,25 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11170}
+    - Class: 114
+      Script: {instanceID: 11512}
+    - Class: 114
+      Script: {instanceID: 13666}
+    - Class: 114
+      Script: {instanceID: 13770}
+    - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -221,6 +248,67 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/TextScreen.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11170}
+    - Class: 114
+      Script: {instanceID: 11512}
+    - Class: 114
+      Script: {instanceID: 12184}
+    - Class: 114
+      Script: {instanceID: 13666}
+    - Class: 114
+      Script: {instanceID: 13770}
+    - Class: 114
+      Script: {instanceID: 14282}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -381,6 +469,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: f92afa2a60caa5fd530a435473ba70ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlanetBehavior
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -435,7 +529,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 41dae125c9f50232572e39b6647f8a89
+      Hash: 28f49c73fb71f64a2ee032dfe762d8b6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -498,6 +592,12 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
+    className: FadeIn
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
     className: MainMenuBehaviour
   - hash:
       serializedVersion: 2
@@ -525,7 +625,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 12c533fdacf6346da914c8c2244eb380
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpecialPowerBehavior
@@ -543,7 +643,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 7b354dcd2b761741c8133870c4958e9f
+      Hash: 82a4164898084e4e68241e552b578634
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CollissionPlatformBehavior
@@ -559,6 +659,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 4e58b1a189cf7a76098d77849db507ef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShieldBehavior
   - hash:
       serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
@@ -699,6 +805,12 @@ ScriptsOnlyBuild:
     className: FallingObjectBehavior
   - hash:
       serializedVersion: 2
+      Hash: 364e3cd008459d079ce19ca42999b8d5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelLoader
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -813,7 +925,8 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 20
   scenePathNames:
+  - Assets/Scenes/TextScreen.unity
+  - Assets/Scenes/MainScreen.unity
   - Assets/Scenes/LevelSelectScreen.unity
   - Assets/Scenes/GameplayScreen.unity
-  - Assets/Scenes/MainScreen.unity
-  playerPath: C:/Users/kenda/Desktop/Test/mdsl
+  playerPath: C:/TEC/VI Semestre/CursoJuegos/MDSLBuild
