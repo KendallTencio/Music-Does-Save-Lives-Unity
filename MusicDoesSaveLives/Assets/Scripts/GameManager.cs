@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,8 +33,12 @@ public class GameManager : MonoBehaviour
     //SpecialPower
     public SpecialPowerBehavior spb;
 
-    //Game Over Screen
+    //GameOver Screen
     public GameObject gameOverScreen;
+    private bool gameEnded;
+
+    //Level Ended Screen
+    public GameObject levelEndedScreen;
 
     void Start()
     {
@@ -43,6 +48,13 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
 
         gameOverScreen.SetActive(false);
+        levelEndedScreen.SetActive(false);
+
+        if(bgMusicBehavior.instance != null)
+        {
+            bgMusicBehavior.instance.StopMusic();
+        }
+        
     }
 
     void Update(){
@@ -57,6 +69,18 @@ public class GameManager : MonoBehaviour
             }
         }
         checkShipDamageStatus();
+
+        if (gameEnded)
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                SceneManager.LoadScene("GameplayScreen");
+            }
+            if (Input.GetKeyDown("return"))
+            {
+                SceneManager.LoadScene("TextScreen");
+            }
+        }
     }
 
     public void NoteHit()
@@ -102,6 +126,12 @@ public class GameManager : MonoBehaviour
         multiText.text = "Multiplier: x" + currentMultiplier;
     }
 
+    public void endLevel()  //Hay que mejorarla, está provicional
+    {
+        levelEndedScreen.SetActive(true);
+        gameEnded = true; 
+    }
+
     void checkShipDamageStatus()
     {
         if (colPlatf.realDamage == colPlatf.maxDamage)
@@ -123,6 +153,7 @@ public class GameManager : MonoBehaviour
             bs.hasStarted = false;
             bgMusic.Stop();
             gameOverScreen.SetActive(true);
+            gameEnded = true;
             Debug.Log("So you have chosen death...");
         }
     }

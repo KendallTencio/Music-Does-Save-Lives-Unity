@@ -6,6 +6,7 @@ public class FallingObjectBehavior : MonoBehaviour
 {
     public bool canBePressed;
     public KeyCode keyPressed;
+    public bool isLastNote = false;
 
     void Update()
     {
@@ -15,6 +16,10 @@ public class FallingObjectBehavior : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
+                if (isLastNote)
+                {
+                    GameManager.instance.endLevel();
+                }
             }
         }
     }
