@@ -99,7 +99,7 @@ public class SpecialPowerBehavior : MonoBehaviour
 
     private IEnumerator lightActivatedForSeconds()
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(2.2f);
         mgVaporwave.UpdateScrollSpeed(0.3f);
         lightSpeedGO.SetActive(false);
         lsGO.sprite = nonePower;

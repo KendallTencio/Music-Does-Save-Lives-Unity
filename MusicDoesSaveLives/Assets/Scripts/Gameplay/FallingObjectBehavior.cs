@@ -8,6 +8,10 @@ public class FallingObjectBehavior : MonoBehaviour
     public KeyCode keyPressed;
     public bool isLastNote = false;
 
+    //SpecialPower
+    public SpecialPowerBehavior spb;
+    public int specialPowerCarried = 0;
+
     void Update()
     {
         if (Input.GetKeyDown(keyPressed))
@@ -16,11 +20,33 @@ public class FallingObjectBehavior : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
+
+                if(specialPowerCarried != 0)
+                {
+                    getSpecialPower();
+                }
+                
                 if (isLastNote)
                 {
                     GameManager.instance.endLevel();
                 }
             }
+        }
+    }
+
+    void getSpecialPower()
+    {
+        if (specialPowerCarried == 1)
+        {
+            spb.lightUpSpecialPower(1);
+        }
+        else if (specialPowerCarried == 2)
+        {
+            spb.lightUpSpecialPower(2);
+        }
+        else if (specialPowerCarried == 3)
+        {
+            spb.lightUpSpecialPower(3);
         }
     }
 

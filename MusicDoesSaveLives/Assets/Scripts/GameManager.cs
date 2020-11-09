@@ -103,20 +103,6 @@ public class GameManager : MonoBehaviour
                 currentMultiplier++;
             }
         }
-
-        if(notesCounter == 2)
-        {
-            spb.lightUpSpecialPower(1);
-        }
-        else if (notesCounter == 5)
-        {
-            spb.lightUpSpecialPower(2);
-        }
-        else if (notesCounter == 8)
-        {
-            spb.lightUpSpecialPower(3);
-        }
-
         multiText.text = "Multiplier: x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;

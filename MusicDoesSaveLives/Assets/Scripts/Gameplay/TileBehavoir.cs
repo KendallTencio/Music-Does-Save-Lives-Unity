@@ -40,21 +40,12 @@ public class TileBehavoir : MonoBehaviour
             
             // Shot
             timeUntilNextFire = timeBetweenFires;
-            ShootLaser();   
+            PressedTile();   
             break;  
             }    
         }
         timeUntilNextFire -= Time.deltaTime;
     }
-    void ShootLaser(){        
-        PressedTile();
-
-     //   Vector3 laserPos = this.transform.position; //la pos de la tale        
-     //   float rotationAngle = this.transform.localEulerAngles.z - 90;        
-     //   laserPos.x += Mathf.Cos(rotationAngle * Mathf.Deg2Rad) * laserDistance;
-     //   laserPos.y += Mathf.Sin(rotationAngle * Mathf.Deg2Rad) * laserDistance;
-     //   Instantiate(bullet,laserPos,this.transform.rotation);
-    }    
 
     void PressedTile()
     {
