@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public CollissionPlatformBehavior colPlatf;
     public GameObject brokenGlass1;
     public GameObject brokenGlass2;
+    public Text hudShipStateText;
 
     //SpecialPower
     public SpecialPowerBehavior spb;
@@ -68,18 +69,23 @@ public class GameManager : MonoBehaviour
                 bgMusic.Play();
             }
         }
-        checkShipDamageStatus();
-
+       
         if (gameEnded)
         {
             if (Input.GetKeyDown("space"))
             {
                 SceneManager.LoadScene("GameplayScreen");
             }
-            if (Input.GetKeyDown("return"))
+            if (Input.GetKeyDown("backspace"))
             {
                 SceneManager.LoadScene("TextScreen");
             }
+            hudShipStateText.gameObject.SetActive(false);
+        }
+
+        if (!gameEnded)
+        {
+            checkShipDamageStatus();
         }
     }
 
@@ -134,14 +140,20 @@ public class GameManager : MonoBehaviour
 
     void checkShipDamageStatus()
     {
+        hudShipStateText.text = colPlatf.realDamage + " hits left";
         if (colPlatf.realDamage == colPlatf.maxDamage)
         {
             brokenGlass1.SetActive(false);
             brokenGlass2.SetActive(false);
         }
-        else if (colPlatf.realDamage == 2)
+        else if (colPlatf.realDamage == 4)
         {
             brokenGlass1.SetActive(true);
+        }
+        else if (colPlatf.realDamage == 2)
+        {
+            brokenGlass1.SetActive(false);
+            brokenGlass2.SetActive(true);
         }
         else if (colPlatf.realDamage == 1)
         {
@@ -154,7 +166,7 @@ public class GameManager : MonoBehaviour
             bgMusic.Stop();
             gameOverScreen.SetActive(true);
             gameEnded = true;
-            Debug.Log("So you have chosen death...");
+            Debug.Log("Death!");
         }
     }
 }

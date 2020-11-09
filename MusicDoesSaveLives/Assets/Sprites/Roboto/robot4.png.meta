@@ -1,79 +1,7 @@
 fileFormatVersion: 2
-guid: a33da9e092f5e7742852fd52d5d33903
+guid: ace333171102950489f7717306cbd105
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5668518402485374812
-    second: Frame_0
-  - first:
-      213: -7495041752641385765
-    second: Frame_1
-  - first:
-      213: 6758969492836969122
-    second: Frame_2
-  - first:
-      213: -2427499913417694198
-    second: Frame_3
-  - first:
-      213: -2791781955627221804
-    second: Frame_4
-  - first:
-      213: 1238989544666868050
-    second: Frame_5
-  - first:
-      213: 9049121775247021607
-    second: Frame_6
-  - first:
-      213: 515072099360550070
-    second: Frame_7
-  - first:
-      213: -4610917827394137599
-    second: Frame_8
-  - first:
-      213: -5270412200303783317
-    second: Frame_9
-  - first:
-      213: -8658648981062890652
-    second: Frame_10
-  - first:
-      213: -3561252020558788848
-    second: Frame_11
-  - first:
-      213: 513947423437015163
-    second: Frame_12
-  - first:
-      213: -2288366205694860310
-    second: Frame_13
-  - first:
-      213: -726630645390946502
-    second: Frame_14
-  - first:
-      213: 6319210419720779537
-    second: Frame_15
-  - first:
-      213: 2402735186137568762
-    second: Frame_16
-  - first:
-      213: -6078512533810434297
-    second: Frame_17
-  - first:
-      213: -5201988795675542065
-    second: Frame_18
-  - first:
-      213: 7514675122231893892
-    second: Frame_19
-  - first:
-      213: 146098408715660837
-    second: Frame_20
-  - first:
-      213: 1785166412595949795
-    second: Frame_21
-  - first:
-      213: -874093037284842740
-    second: Frame_22
-  - first:
-      213: 277703897281475990
-    second: Frame_23
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -136,7 +64,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -148,7 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -160,7 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -172,7 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -181,28 +109,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Frame_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 159
-        width: 500
-        height: 341
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a03819cb806551b0800000000000000
-      internalID: -5668518402485374812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
