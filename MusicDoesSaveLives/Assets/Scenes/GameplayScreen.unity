@@ -4987,7 +4987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573145137}
   m_LocalRotation: {x: -0.0000000106694324, y: 0.9983754, z: -0.056978542, w: -0.0000001869493}
-  m_LocalPosition: {x: 5, y: 20.499998, z: 11.399999}
+  m_LocalPosition: {x: 5, y: 20.599998, z: 12.199999}
   m_LocalScale: {x: 1, y: 1, z: 0.73677}
   m_Children: []
   m_Father: {fileID: 1119486263}
@@ -10207,7 +10207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661491670}
   m_LocalRotation: {x: -0.0000000106694324, y: 0.9983754, z: -0.056978542, w: -0.0000001869493}
-  m_LocalPosition: {x: 5, y: 20.5, z: 11.4}
+  m_LocalPosition: {x: 5, y: 20.6, z: 12.2}
   m_LocalScale: {x: 1, y: 1, z: 0.73677}
   m_Children: []
   m_Father: {fileID: 1119486263}
@@ -16732,7 +16732,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dee6f01e9bff33b4fb9d8807b40a0080, type: 2}
+  - {fileID: 2100000, guid: 88b6fa881c0ea19418a58b30a2c4444b, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -17029,7 +17029,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -17610,7 +17610,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -18048,7 +18048,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -18067,7 +18067,7 @@ ParticleSystem:
         atime0: 0
         atime1: 33153
         atime2: 65535
-        atime3: 0
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
@@ -21443,7 +21443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770429748}
   m_LocalRotation: {x: -0.0000000106694324, y: 0.9983754, z: -0.056978542, w: -0.0000001869493}
-  m_LocalPosition: {x: 0.10000038, y: 4.800001, z: 27}
+  m_LocalPosition: {x: 0.1, y: 6.6, z: 42.9}
   m_LocalScale: {x: 1, y: 1, z: 0.73677}
   m_Children: []
   m_Father: {fileID: 93675326}
@@ -23336,7 +23336,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dee6f01e9bff33b4fb9d8807b40a0080, type: 2}
+  - {fileID: 2100000, guid: 88b6fa881c0ea19418a58b30a2c4444b, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -23633,7 +23633,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -24214,7 +24214,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -24652,7 +24652,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -24671,7 +24671,7 @@ ParticleSystem:
         atime0: 0
         atime1: 33153
         atime2: 65535
-        atime3: 0
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
@@ -28047,7 +28047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979769375}
   m_LocalRotation: {x: -0.0000000106694324, y: 0.9983754, z: -0.056978542, w: -0.0000001869493}
-  m_LocalPosition: {x: 0.10000038, y: 4.799999, z: 27}
+  m_LocalPosition: {x: 0.1, y: 6.5, z: 41.9}
   m_LocalScale: {x: 1, y: 1, z: 0.73677}
   m_Children: []
   m_Father: {fileID: 93675326}
@@ -33813,7 +33813,7 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Lives saved: 0 '
@@ -34261,6 +34261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FallingCube (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114348905888344137, guid: 0e2e2237972e7a44d9f17cd1e0531396,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3114348905888344138, guid: 0e2e2237972e7a44d9f17cd1e0531396,
         type: 3}
