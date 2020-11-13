@@ -47,6 +47,9 @@ Material:
 =======
         m_Scale: {x: 4, y: 4}
         m_Offset: {x: 0, y: 26.704647}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}

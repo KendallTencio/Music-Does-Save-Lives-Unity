@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 guid: 362dd937a22b79341af3a857c3ea1ce9
+=======
+guid: f196cc29481bada4ea2f2bcad022d917
+>>>>>>> Stashed changes
 =======
 guid: f196cc29481bada4ea2f2bcad022d917
 >>>>>>> Stashed changes
@@ -90,7 +94,11 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     textureCompression: 0
+=======
+    textureCompression: 2
+>>>>>>> Stashed changes
 =======
     textureCompression: 2
 >>>>>>> Stashed changes
@@ -106,8 +114,11 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     textureCompression: 0
 =======
+=======
+>>>>>>> Stashed changes
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
@@ -121,6 +132,9 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     compressionQuality: 50
     crunchedCompression: 0
@@ -134,7 +148,11 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     textureCompression: 0
+=======
+    textureCompression: 2
+>>>>>>> Stashed changes
 =======
     textureCompression: 2
 >>>>>>> Stashed changes
@@ -150,7 +168,11 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     textureCompression: 0
+=======
+    textureCompression: 2
+>>>>>>> Stashed changes
 =======
     textureCompression: 2
 >>>>>>> Stashed changes
