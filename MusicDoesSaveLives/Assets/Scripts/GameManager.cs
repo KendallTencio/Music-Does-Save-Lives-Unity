@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public int currentLevel;
+
     public AudioSource bgMusic;
     public bool startPlaying;
     public BeatScroller bs;
@@ -28,12 +31,28 @@ public class GameManager : MonoBehaviour
     public CollissionPlatformBehavior colPlatf;
     public GameObject brokenGlass1;
     public GameObject brokenGlass2;
+    public Text hudShipStateText;
 
     //SpecialPower
     public SpecialPowerBehavior spb;
 
-    //Game Over Screen
+    //GameOver Screen
     public GameObject gameOverScreen;
+    private bool gameOver = false;
+
+    //Level Ended Screen
+    public GameObject levelEndedScreen;
+    public GameObject endLevelMusic;
+    public GameObject endingCanvas;
+    public Text livesSavedTotalText;
+    public AudioSource spaceHit;
+    private bool gameEnded;
+
+    //Screen Elements
+    public GameObject HUD;
+    public GameObject Detector;
+    public GameObject distantObject;
+    public GameObject glass;
 
     void Start()
     {
@@ -43,6 +62,14 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
 
         gameOverScreen.SetActive(false);
+        levelEndedScreen.SetActive(false);
+        endingCanvas.SetActive(false);
+
+        if (bgMusicBehavior.instance != null)
+        {
+            bgMusicBehavior.instance.StopMusic();
+        }
+        
     }
 
     void Update(){
@@ -56,7 +83,67 @@ public class GameManager : MonoBehaviour
                 bgMusic.Play();
             }
         }
-        checkShipDamageStatus();
+
+        if (gameOver)
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                spaceHit.Play();
+                SceneManager.LoadScene("GameplayScreen");
+            }
+            if (Input.GetKeyDown("backspace"))
+            {
+                spaceHit.Play();
+                SceneManager.LoadScene("TextScreen");
+            }
+        }
+
+        if (gameEnded)
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                spaceHit.Play();
+                switch (currentLevel)
+                {
+                    case 1:
+                        Debug.Log("Level 2 Unlocked");
+                        DataHolderBehavior.instance.UpdateUnlockedPin(2);
+                        break;
+                    case 2:
+                        Debug.Log("Level 3 Unlocked");
+                        DataHolderBehavior.instance.UpdateUnlockedPin(3);
+                        break;
+                    case 3:
+                        //Ending
+                        break;
+                    default:
+                        break;
+                }
+
+                SceneManager.LoadScene("LevelSelectScreen");
+            }
+
+            if (Input.GetKeyDown("backspace"))
+            {
+                spaceHit.Play();
+                SceneManager.LoadScene("GameplayScreen"); //Esto debe ser para repetir el respectivo nivel
+            }
+
+            //Se apaga toda la interfaz
+            hudShipStateText.gameObject.SetActive(false);
+            HUD.SetActive(false);
+            Detector.SetActive(false);
+            distantObject.SetActive(false);
+            glass.SetActive(false);
+
+            bgMusic.Stop();
+            endLevelMusic.SetActive(true);
+        }
+
+        if (!gameOver)
+        {
+            checkShipDamageStatus();
+        }
     }
 
     public void NoteHit()
@@ -73,20 +160,6 @@ public class GameManager : MonoBehaviour
                 currentMultiplier++;
             }
         }
-
-        if(notesCounter == 2)
-        {
-            spb.lightUpSpecialPower(1);
-        }
-        else if (notesCounter == 5)
-        {
-            spb.lightUpSpecialPower(2);
-        }
-        else if (notesCounter == 8)
-        {
-            spb.lightUpSpecialPower(3);
-        }
-
         multiText.text = "Multiplier: x" + currentMultiplier;
 
         currentScore += scorePerNote * currentMultiplier;
@@ -102,28 +175,56 @@ public class GameManager : MonoBehaviour
         multiText.text = "Multiplier: x" + currentMultiplier;
     }
 
+    public void endLevel()  //Se puede mejorar, está provicional
+    {
+        gameEnded = true;
+        StartCoroutine(canvaForSeconds());
+    }
+
+    private IEnumerator canvaForSeconds()
+    {
+        endingCanvas.SetActive(true); //Efecto hecho de forma "cutre" para resultados de nivel
+        yield return new WaitForSeconds(0.3f);
+        endingCanvas.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        endingCanvas.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        endingCanvas.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        endingCanvas.SetActive(true);
+        livesSavedTotalText.text = "Lives saved: " + currentScore;
+    }
+
     void checkShipDamageStatus()
     {
+        hudShipStateText.text = colPlatf.realDamage + " hits left";
         if (colPlatf.realDamage == colPlatf.maxDamage)
         {
             brokenGlass1.SetActive(false);
             brokenGlass2.SetActive(false);
         }
-        else if (colPlatf.realDamage == 2)
+        else if (colPlatf.realDamage == 4)
         {
             brokenGlass1.SetActive(true);
+        }
+        else if (colPlatf.realDamage == 2)
+        {
+            brokenGlass1.SetActive(false);
+            brokenGlass2.SetActive(true);
         }
         else if (colPlatf.realDamage == 1)
         {
             brokenGlass1.SetActive(false);
             brokenGlass2.SetActive(true);
         }
-        else if(colPlatf.realDamage == 0)
+        else if (colPlatf.realDamage <= 0)
         {
             bs.hasStarted = false;
             bgMusic.Stop();
             gameOverScreen.SetActive(true);
-            Debug.Log("So you have chosen death...");
+            gameOver = true;
+            hudShipStateText.text = "";
+            Debug.Log("Death!");
         }
     }
 }

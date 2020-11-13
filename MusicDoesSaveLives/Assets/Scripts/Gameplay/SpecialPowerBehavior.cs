@@ -7,16 +7,13 @@ public class SpecialPowerBehavior : MonoBehaviour
     //SpecialPowerList 
     public Sprite fixedWindow;
     public Sprite colorBarrier;
-    public Sprite lightSpeed;
     public Sprite nonePower;
 
     public SpriteRenderer fwGO;
     public SpriteRenderer cbGO;
-    public SpriteRenderer lsGO;
 
     private bool fixedWindowGained;
     private bool colorBarrierGained;
-    private bool lightSpeedGained;
 
     //DamageManagement
     public GameObject repairingRobot;
@@ -32,13 +29,11 @@ public class SpecialPowerBehavior : MonoBehaviour
 
     void Start()
     {
-        //repairingRobot = GameObject.FindWithTag("RRobot");
         repairingRobot.SetActive(false);
         shield.SetActive(false);
         lightSpeedGO.SetActive(false);
         fixedWindowGained = false;
         colorBarrierGained = false;
-        lightSpeedGained = false;
     }
 
     void Update()
@@ -51,10 +46,6 @@ public class SpecialPowerBehavior : MonoBehaviour
         if (Input.GetKeyDown("v") && colorBarrierGained)
         {
             barrierActivated();
-        }
-        if (Input.GetKeyDown("b") && lightSpeedGained)
-        {
-            lightSpeedActivated();
         }
     }
 
@@ -88,21 +79,19 @@ public class SpecialPowerBehavior : MonoBehaviour
         cbGO.sprite = nonePower;
     }
 
-    void lightSpeedActivated()
+    public void lightSpeedActivated()
     {
         lightSpeedGO.SetActive(true);
         mgVaporwave.UpdateScrollSpeed(3f);
         pBehav.expansionRate = 1.01f;
         StartCoroutine(lightActivatedForSeconds());
-        lightSpeedGained = false;
     }
 
     private IEnumerator lightActivatedForSeconds()
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(3f);
         mgVaporwave.UpdateScrollSpeed(0.3f);
         lightSpeedGO.SetActive(false);
-        lsGO.sprite = nonePower;
         pBehav.expansionRate = pBehav.expansionRateBackup;
     }
 
@@ -117,11 +106,6 @@ public class SpecialPowerBehavior : MonoBehaviour
         {
             cbGO.sprite = colorBarrier;
             colorBarrierGained = true;
-        }
-        else if (numPower == 3)
-        {
-            lsGO.sprite = lightSpeed;
-            lightSpeedGained = true;
         }
     }
 }
