@@ -12,6 +12,9 @@ public class FallingObjectBehavior : MonoBehaviour
     public SpecialPowerBehavior spb;
     public int specialPowerCarried = 0;
 
+    //CollissionPlatformBehavior for Damage
+    public CollissionPlatformBehavior colPlatf;
+
     void Update()
     {
         if (Input.GetKeyDown(keyPressed))
@@ -29,7 +32,12 @@ public class FallingObjectBehavior : MonoBehaviour
                 if (isLastNote)
                 {
                     GameManager.instance.endLevel();
+                    spb.lightSpeedActivated();
                 }
+            }
+            else{
+                //Debug.Log("Damage with: " + (colPlatf.realDamage - 1));
+                //colPlatf.realDamage--;
             }
         }
     }

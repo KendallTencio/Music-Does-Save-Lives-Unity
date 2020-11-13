@@ -18,13 +18,21 @@ public class Pin : MonoBehaviour
     public bool IsAutomatic;
     public string SceneName;
     public int pinNumber;
+    public bool enterLevel = false;
+    public bool unlockedPin;
+    public bool isCurrentPin;
+
+    public AudioSource lockedLevel;
+    public AudioSource spaceHit;
 
     public Pin UpPin;
     public Pin DownPin;
     public Pin LeftPin;
     public Pin RightPin;
 
+    public Ship shipScript;
     private Dictionary<Direction, Pin> _pinDirections;
+
 
     void Start()
     {
@@ -40,9 +48,18 @@ public class Pin : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if(shipScript.CurrentPin.pinNumber == this.pinNumber)
         {
-            EnterLevel();
+            if (DataHolderBehavior.instance.isPinUnlocked(pinNumber) && Input.GetKeyDown("space"))
+            {
+                spaceHit.Play();
+                DataHolderBehavior.instance.lastPinNumber = this.pinNumber;
+                EnterLevel();
+            }
+            else if (!DataHolderBehavior.instance.isPinUnlocked(pinNumber) && Input.GetKeyDown("space"))
+            {
+                lockedLevel.Play();
+            }
         }
     }
 
@@ -100,6 +117,7 @@ public class Pin : MonoBehaviour
 
     void EnterLevel()
     {
+        enterLevel = true;
         SceneManager.LoadScene(SceneName);
     }
 }

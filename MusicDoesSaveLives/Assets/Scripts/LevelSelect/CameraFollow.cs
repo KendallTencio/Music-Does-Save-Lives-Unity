@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform Target;
+    private Transform Target;
+
+    void Start()
+    {
+        Target = GameObject.FindWithTag("PlayerShip").transform;
+    }
 
     void Update()
     {

@@ -9,6 +9,8 @@ public class CollissionPlatformBehavior : MonoBehaviour
     public int maxDamage = 3;
     public int realDamage = 3;
 
+    public AudioSource damageSound;
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "FObject")
@@ -24,6 +26,7 @@ public class CollissionPlatformBehavior : MonoBehaviour
         GameObject explosion = (GameObject) Instantiate(explObj);
         explosion.transform.position = tp;
         realDamage--;
+        damageSound.Play();
         StartCoroutine(destroyGO(explosion));
     }
 
