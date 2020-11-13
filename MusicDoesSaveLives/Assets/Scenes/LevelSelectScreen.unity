@@ -904,7 +904,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293956476
 GameObject:
@@ -2148,7 +2148,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 5.289424, y: 0.9999995, z: 1}
+    m_Scale: {x: 5.9, y: 0.9999995, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -6421,6 +6421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bgMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580506687138656263, guid: 3a696b75960bbe644a7f90876fb53efe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a696b75960bbe644a7f90876fb53efe, type: 3}
