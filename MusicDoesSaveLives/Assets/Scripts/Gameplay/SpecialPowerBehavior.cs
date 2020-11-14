@@ -30,7 +30,7 @@ public class SpecialPowerBehavior : MonoBehaviour
     void Start()
     {
         repairingRobot.SetActive(false);
-        shield.SetActive(false);
+        //shield.SetActive(false);
         lightSpeedGO.SetActive(false);
         fixedWindowGained = false;
         colorBarrierGained = false;
@@ -67,7 +67,9 @@ public class SpecialPowerBehavior : MonoBehaviour
 
     void barrierActivated()
     {
-        shield.SetActive(true);
+        //shield.SetActive(true);
+        shield.GetComponent<SpriteRenderer>().enabled = !shield.GetComponent<SpriteRenderer>().enabled;
+        shield.GetComponent<BoxCollider>().enabled = !shield.GetComponent<BoxCollider>().enabled;
         StartCoroutine(activatedForSeconds());
         colorBarrierGained = false;
     }
@@ -75,7 +77,9 @@ public class SpecialPowerBehavior : MonoBehaviour
     private IEnumerator activatedForSeconds()
     {
         yield return new WaitForSeconds(1f);
-        shield.SetActive(false);
+        //shield.SetActive(false);
+        shield.GetComponent<SpriteRenderer>().enabled = !shield.GetComponent<SpriteRenderer>().enabled;
+        shield.GetComponent<BoxCollider>().enabled = !shield.GetComponent<BoxCollider>().enabled;
         cbGO.sprite = nonePower;
     }
 

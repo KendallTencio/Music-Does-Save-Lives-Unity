@@ -57,7 +57,7 @@ public class TileBehavoir : MonoBehaviour
 
     private IEnumerator waitForTile()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.35f);
         SRObject.sprite = defaultImage;
         lightning.SetActive(false);
     }

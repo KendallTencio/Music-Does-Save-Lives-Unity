@@ -21,9 +21,6 @@ public class FallingObjectBehavior : MonoBehaviour
         {
             if (canBePressed)
             {
-                gameObject.SetActive(false);
-                GameManager.instance.NoteHit();
-
                 if(specialPowerCarried != 0)
                 {
                     getSpecialPower();
@@ -34,10 +31,9 @@ public class FallingObjectBehavior : MonoBehaviour
                     GameManager.instance.endLevel();
                     spb.lightSpeedActivated();
                 }
-            }
-            else{
-                //Debug.Log("Damage with: " + (colPlatf.realDamage - 1));
-                //colPlatf.realDamage--;
+
+                gameObject.SetActive(false);
+                GameManager.instance.NoteHit();
             }
         }
     }
