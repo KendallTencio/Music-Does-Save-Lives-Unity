@@ -18,6 +18,7 @@ public class Pin : MonoBehaviour
     public bool IsAutomatic;
     public string SceneName;
     public int pinNumber;
+    public string pinName;
     public bool enterLevel = false;
     public bool unlockedPin;
     public bool isCurrentPin;

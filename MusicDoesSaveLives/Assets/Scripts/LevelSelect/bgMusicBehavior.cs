@@ -44,4 +44,9 @@ public class bgMusicBehavior : MonoBehaviour
     {
         musicSource.Stop();
     }
+
+    public void PlayMusic()
+    {
+        musicSource.Play();
+    }
 }
