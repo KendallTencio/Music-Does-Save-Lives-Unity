@@ -69,7 +69,7 @@ public class MapManager : MonoBehaviour
     // Update the Text
     public void UpdateGui()
     {
-        SelectedLevelText.text = string.Format("Current Level: {0}", Ship.CurrentPin.pinNumber);
+        SelectedLevelText.text = "Current Level: "+ Ship.CurrentPin.pinName;
     }
 
     public void unlockLevel(int lvl)
