@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
 
     //SpecialPower
     public SpecialPowerBehavior spb;
+    public GameObject thunderPowerUp1;
+    public GameObject thunderPowerUp2;
+    public AudioSource powerUpGainSound;
 
     //GameOver Screen
     public GameObject gameOverScreen;
@@ -53,6 +56,20 @@ public class GameManager : MonoBehaviour
     public GameObject Detector;
     public GameObject distantObject;
     public GameObject glass;
+    public GameObject spaceKeyToStar;
+    public GameObject readKey;
+    public GameObject keyboardKey;
+    public GameObject canvasIni;
+
+    //Letter
+    public AudioSource paperSound;
+    private bool letterOn = false;
+
+    //Screen Keyboard
+    public AudioSource soundScreen;
+    public GameObject screenKeyboard;
+    private bool screenKeyboardOn = false;
+    
 
     void Start()
     {
@@ -79,13 +96,37 @@ public class GameManager : MonoBehaviour
             {
                 startPlaying = true;
                 bs.hasStarted = true;
+                putOffIniObjects();
 
                 bgMusic.Play();
+            }
+            if (letterOn && Input.GetKeyDown("r"))
+            {
+                letterOn = false;
+                paperSound.Play();
+            }
+            else if (!letterOn && Input.GetKeyDown("r"))
+            {
+                letterOn = true;
+                paperSound.Play();
+            }
+            if (screenKeyboardOn && Input.GetKeyDown("t"))
+            {
+                soundScreen.Play();
+                screenKeyboardOn = false;
+                screenKeyboard.SetActive(false);
+            }
+            else if (!screenKeyboardOn && Input.GetKeyDown("t"))
+            {
+                soundScreen.Play();
+                screenKeyboardOn = true;
+                screenKeyboard.SetActive(true);
             }
         }
 
         if (gameOver)
         {
+            putOffIniObjects();
             if (Input.GetKeyDown("space"))
             {
                 spaceHit.Play();
@@ -100,6 +141,7 @@ public class GameManager : MonoBehaviour
 
         if (gameEnded)
         {
+            
             if (Input.GetKeyDown("space"))
             {
                 spaceHit.Play();
@@ -146,6 +188,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void putOffIniObjects()
+    {
+        spaceKeyToStar.SetActive(false);
+        readKey.SetActive(false);
+        keyboardKey.SetActive(false);
+        canvasIni.SetActive(false);
+    }
+
     public void NoteHit()
     {
         Debug.Log("Hit On Time");
@@ -178,6 +228,7 @@ public class GameManager : MonoBehaviour
     public void endLevel()  //Se puede mejorar, está provicional
     {
         gameEnded = true;
+        putOffIniObjects();
         StartCoroutine(canvaForSeconds());
     }
 
@@ -226,5 +277,27 @@ public class GameManager : MonoBehaviour
             hudShipStateText.text = "";
             Debug.Log("Death!");
         }
+    }
+
+    public void powerActivationThunder(int numPower)
+    {
+        StartCoroutine(thunderTimerPowerUp(numPower));
+    }
+
+    private IEnumerator thunderTimerPowerUp(int numPowerUp)
+    {
+        if (numPowerUp == 1)
+        {
+            thunderPowerUp1.SetActive(true);
+            powerUpGainSound.Play();
+        }
+        else if (numPowerUp == 2)
+        {
+            thunderPowerUp2.SetActive(true);
+            powerUpGainSound.Play();
+        }
+        yield return new WaitForSeconds(0.55f);
+        thunderPowerUp1.SetActive(false);
+        thunderPowerUp2.SetActive(false);
     }
 }

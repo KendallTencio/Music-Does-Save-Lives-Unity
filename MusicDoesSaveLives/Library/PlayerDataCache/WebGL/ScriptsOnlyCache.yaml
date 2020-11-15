@@ -1,15 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BarBehavior
     - BeatScroller
     - CameraFollow
     - CollissionPlatformBehavior
+    - DataHolderBehavior
     - FallingObjectBehavior
     - GameManager
     - LevelLoader
     - MapManager
     - MoveGrid
     - Pin
+    - PinControllerBehavior
     - PlanetBehavior
     - ShieldBehavior
     - Ship
@@ -91,33 +94,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11530}
     - Class: 114
-      Script: {instanceID: 11636}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 11744}
+      Script: {instanceID: 11746}
     - Class: 114
-      Script: {instanceID: 12036}
+      Script: {instanceID: 12038}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12190}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 12682}
     - Class: 114
-      Script: {instanceID: 12788}
+      Script: {instanceID: 12792}
     - Class: 114
-      Script: {instanceID: 12888}
+      Script: {instanceID: 12892}
     - Class: 114
-      Script: {instanceID: 13178}
+      Script: {instanceID: 13054}
     - Class: 114
-      Script: {instanceID: 13654}
+      Script: {instanceID: 13184}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13662}
     - Class: 114
-      Script: {instanceID: 13712}
+      Script: {instanceID: 13678}
     - Class: 114
-      Script: {instanceID: 14286}
+      Script: {instanceID: 13720}
+    - Class: 114
+      Script: {instanceID: 14294}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -125,6 +130,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -170,25 +179,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11304}
     - Class: 114
-      Script: {instanceID: 11606}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 12728}
+      Script: {instanceID: 12190}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 12732}
     - Class: 114
-      Script: {instanceID: 13324}
+      Script: {instanceID: 13034}
     - Class: 114
-      Script: {instanceID: 13664}
+      Script: {instanceID: 13330}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13588}
     - Class: 114
-      Script: {instanceID: 14172}
+      Script: {instanceID: 13672}
     - Class: 114
-      Script: {instanceID: 14286}
+      Script: {instanceID: 13678}
+    - Class: 114
+      Script: {instanceID: 14180}
+    - Class: 114
+      Script: {instanceID: 14294}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -243,17 +256,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11514}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 12728}
+      Script: {instanceID: 12732}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13678}
     - Class: 114
-      Script: {instanceID: 13774}
+      Script: {instanceID: 13782}
     - Class: 114
-      Script: {instanceID: 14172}
+      Script: {instanceID: 14180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -306,19 +319,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11514}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12190}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13678}
     - Class: 114
-      Script: {instanceID: 13774}
+      Script: {instanceID: 13782}
     - Class: 114
-      Script: {instanceID: 14172}
+      Script: {instanceID: 14180}
     - Class: 114
-      Script: {instanceID: 14286}
+      Script: {instanceID: 14294}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -370,6 +383,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PinControllerBehavior
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -450,7 +469,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 2acc0125d5b9c1ec1fb41bf37e349a3d
+      Hash: 413b96c2d7059c89b9d6081a7019d5ff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pin
@@ -558,7 +577,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 578b3718a9a3e51eccdf12499ca87704
+      Hash: d51ea9dd76a200f5d701b096df2f850e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -568,6 +587,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: e2c96c3e32d37d03a8f90490e49278b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossBehavior
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -654,7 +679,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: 12c533fdacf6346da914c8c2244eb380
+      Hash: 28b1be1b223fe250c3c1cbc202acef03
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpecialPowerBehavior
@@ -678,7 +703,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 82a4164898084e4e68241e552b578634
+      Hash: 7f108a0622aa516f370f123ceebffb44
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CollissionPlatformBehavior
@@ -714,7 +739,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 0da877ad61f6f92a3d18e7ff69459997
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraFollow
@@ -724,6 +749,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 34f8669bfe5f95e0cf8171eac171d333
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BarBehavior
   - hash:
       serializedVersion: 2
       Hash: 71b711096c6c32621c1d4c02310898b7
@@ -786,7 +817,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 67f38fce58dbb556ba2ef63307990b2e
+      Hash: 0423bc79c58b108a7da7157c580a7e88
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MapManager
@@ -802,6 +833,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 1f76d69feabe188b88bdf12306a65f60
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DataHolderBehavior
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -834,7 +871,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 964cafbe7a335dc68b7bb3e9f76ec90c
+      Hash: 9aa35af713b7fa37b451a89eba265484
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FallingObjectBehavior

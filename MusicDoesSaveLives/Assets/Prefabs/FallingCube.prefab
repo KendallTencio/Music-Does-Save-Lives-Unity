@@ -78,6 +78,13 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 108
   isLastNote: 0
+  spb: {fileID: 0}
+  specialPowerCarried: 0
+  thunderPowerUp1: {fileID: 3518770909206215477, guid: 893e00214df93d54c9a6f1fdc3ab51c6,
+    type: 3}
+  thunderPowerUp2: {fileID: 7449738246090276527, guid: 41ca0069d3d237e4aa332b7cfcb28b2f,
+    type: 3}
+  colPlatf: {fileID: 0}
 --- !u!212 &3114348905888344132
 SpriteRenderer:
   m_ObjectHideFlags: 0
