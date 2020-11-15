@@ -82,11 +82,9 @@ public class GameManager : MonoBehaviour
         levelEndedScreen.SetActive(false);
         endingCanvas.SetActive(false);
 
-        if (bgMusicBehavior.instance != null)
-        {
-            bgMusicBehavior.instance.StopMusic();
-        }
-        
+        manageMusicLevelSelection(false);
+
+
     }
 
     void Update(){
@@ -127,6 +125,7 @@ public class GameManager : MonoBehaviour
         if (gameOver)
         {
             putOffIniObjects();
+            screenKeyboard.SetActive(false);
             if (Input.GetKeyDown("space"))
             {
                 spaceHit.Play();
@@ -145,6 +144,9 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown("space"))
             {
                 spaceHit.Play();
+
+                manageMusicLevelSelection(true);
+
                 switch (currentLevel)
                 {
                     case 1:
@@ -168,7 +170,21 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown("backspace"))
             {
                 spaceHit.Play();
-                SceneManager.LoadScene("GameplayScreen"); //Esto debe ser para repetir el respectivo nivel
+                //SceneManager.LoadScene("GameplayScreen"); //Esto debe ser para repetir el respectivo nivel
+                switch (currentLevel)
+                {
+                    case 1:
+                        SceneManager.LoadScene("Level_1");
+                        break;
+                    case 2:
+                        SceneManager.LoadScene("Level_2");
+                        break;
+                    case 3:
+                        //SceneManager.LoadScene("Level_3");
+                        break;
+                    default:
+                        break;
+                }
             }
 
             //Se apaga toda la interfaz
@@ -194,6 +210,21 @@ public class GameManager : MonoBehaviour
         readKey.SetActive(false);
         keyboardKey.SetActive(false);
         canvasIni.SetActive(false);
+    }
+
+    public void manageMusicLevelSelection(bool playMusic)
+    {
+        if (bgMusicBehavior.instance != null)
+        {
+            if (playMusic)
+            {
+                bgMusicBehavior.instance.PlayMusic();
+            }
+            else
+            {
+                bgMusicBehavior.instance.StopMusic();
+            }
+        }
     }
 
     public void NoteHit()
@@ -229,6 +260,7 @@ public class GameManager : MonoBehaviour
     {
         gameEnded = true;
         putOffIniObjects();
+        screenKeyboard.SetActive(false);
         StartCoroutine(canvaForSeconds());
     }
 

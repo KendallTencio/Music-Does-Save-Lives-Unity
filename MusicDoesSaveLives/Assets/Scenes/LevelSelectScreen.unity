@@ -214,6 +214,7 @@ MonoBehaviour:
   IsAutomatic: 0
   SceneName: GameplayScreen
   pinNumber: 3
+  pinName: Joseke
   enterLevel: 0
   unlockedPin: 0
   isCurrentPin: 0
@@ -418,8 +419,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAutomatic: 0
-  SceneName: GameplayScreen
+  SceneName: Level_1
   pinNumber: 1
+  pinName: 'Asteroid Belt '
   enterLevel: 0
   unlockedPin: 1
   isCurrentPin: 0
@@ -526,8 +528,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAutomatic: 0
-  SceneName: GameplayScreen
+  SceneName: Level_2
   pinNumber: 2
+  pinName: Space Colony (Infected)
   enterLevel: 0
   unlockedPin: 0
   isCurrentPin: 0
@@ -623,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: -150, y: 50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868357037
@@ -647,16 +650,16 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2b8a49e801b7e164a9dc197c5118c3cf, type: 3}
-    m_FontSize: 30
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Current level: '
 --- !u!222 &868357038
@@ -1187,6 +1190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759749735}
   - component: {fileID: 1759749734}
+  - component: {fileID: 1759749736}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -1252,12 +1256,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759749733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.42, y: 2.1, z: 0}
+  m_LocalPosition: {x: 8.37, y: 2.27, z: 0}
   m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1759749736
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759749733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8c46ac7508a0494ba02174e7165efa9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1778094630
 GameObject:
   m_ObjectHideFlags: 0
