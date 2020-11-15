@@ -25,15 +25,14 @@ public class FallingObjectBehavior : MonoBehaviour
                 {
                     getSpecialPower();
                 }
-                
+                gameObject.SetActive(false);
+                GameManager.instance.NoteHit();
+
                 if (isLastNote)
                 {
                     GameManager.instance.endLevel();
                     spb.lightSpeedActivated();
                 }
-
-                gameObject.SetActive(false);
-                GameManager.instance.NoteHit();
             }
         }
     }
@@ -42,15 +41,13 @@ public class FallingObjectBehavior : MonoBehaviour
     {
         if (specialPowerCarried == 1)
         {
+            GameManager.instance.powerActivationThunder(1);
             spb.lightUpSpecialPower(1);
         }
         else if (specialPowerCarried == 2)
         {
+            GameManager.instance.powerActivationThunder(2);
             spb.lightUpSpecialPower(2);
-        }
-        else if (specialPowerCarried == 3)
-        {
-            spb.lightUpSpecialPower(3);
         }
     }
 
@@ -69,6 +66,11 @@ public class FallingObjectBehavior : MonoBehaviour
         {
             canBePressed = false;
             GameManager.instance.NoteMissed();
+            if (isLastNote)
+            {
+                GameManager.instance.endLevel();
+                spb.lightSpeedActivated();
+            }
         }
     }
 }

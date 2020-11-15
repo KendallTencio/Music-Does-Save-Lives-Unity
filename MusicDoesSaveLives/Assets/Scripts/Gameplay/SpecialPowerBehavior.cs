@@ -99,6 +99,8 @@ public class SpecialPowerBehavior : MonoBehaviour
         pBehav.expansionRate = pBehav.expansionRateBackup;
     }
 
+
+
     public void lightUpSpecialPower(int numPower)
     {
         if(numPower == 1)
