@@ -7,6 +7,7 @@ public class FallingObjectBehavior : MonoBehaviour
     public bool canBePressed;
     public KeyCode keyPressed;
     public bool isLastNote = false;
+    public int currentLevel;
 
     //SpecialPower
     public SpecialPowerBehavior spb;
@@ -30,8 +31,8 @@ public class FallingObjectBehavior : MonoBehaviour
 
                 if (isLastNote)
                 {
-                    GameManager.instance.endLevel();
-                    spb.lightSpeedActivated();
+                    GameManager.instance.endLevel(currentLevel);
+                    //spb.lightSpeedActivated();
                 }
             }
         }
@@ -68,8 +69,8 @@ public class FallingObjectBehavior : MonoBehaviour
             GameManager.instance.NoteMissed();
             if (isLastNote)
             {
-                GameManager.instance.endLevel();
-                spb.lightSpeedActivated();
+                GameManager.instance.endLevel(currentLevel);
+                //spb.lightSpeedActivated();
             }
         }
     }

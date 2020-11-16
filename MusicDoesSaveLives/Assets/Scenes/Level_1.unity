@@ -221,6 +221,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 106
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -455,6 +456,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 115
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -587,6 +589,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 102
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -1315,8 +1318,9 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 97
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
-  specialPowerCarried: 0
+  specialPowerCarried: 1
   colPlatf: {fileID: 1422026926}
 --- !u!54 &241895662
 Rigidbody:
@@ -1685,6 +1689,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 107
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -1915,6 +1920,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 97
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -2440,6 +2446,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 108
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -2609,6 +2616,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 108
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -2741,6 +2749,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 107
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -13079,6 +13088,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 102
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -13523,6 +13533,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 115
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -13655,6 +13666,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 108
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -13871,6 +13883,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 97
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -14003,6 +14016,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 102
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -18889,6 +18903,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 115
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -19148,6 +19163,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 100
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -19902,6 +19918,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 106
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -19999,6 +20016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
+  successSound: {fileID: 0}
   bgMusic: {fileID: 149307858}
   startPlaying: 0
   bs: {fileID: 850250878}
@@ -20031,6 +20049,7 @@ MonoBehaviour:
   readKey: {fileID: 156019128}
   keyboardKey: {fileID: 1222745212}
   canvasIni: {fileID: 1576280060}
+  bossGO: {fileID: 0}
   paperSound: {fileID: 1063209544}
   soundScreen: {fileID: 2064536722}
   screenKeyboard: {fileID: 1447727825}
@@ -25089,6 +25108,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 107
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -25221,6 +25241,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 102
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -25589,6 +25610,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 108
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -25721,6 +25743,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 100
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -26058,6 +26081,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 97
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -26596,6 +26620,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 107
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -26761,6 +26786,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 106
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -27020,6 +27046,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 100
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -27363,6 +27390,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 106
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -27583,6 +27611,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 115
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -27816,8 +27845,9 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 97
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
-  specialPowerCarried: 0
+  specialPowerCarried: 2
   colPlatf: {fileID: 1422026926}
 --- !u!54 &1474549620
 Rigidbody:
@@ -28174,6 +28204,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 108
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -28782,6 +28813,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 102
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -28914,6 +28946,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 97
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -29128,6 +29161,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 106
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -29260,6 +29294,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 100
   isLastNote: 1
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -29392,8 +29427,9 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 102
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
-  specialPowerCarried: 0
+  specialPowerCarried: 2
   colPlatf: {fileID: 1422026926}
 --- !u!54 &1744972658
 Rigidbody:
@@ -29943,8 +29979,9 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 100
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
-  specialPowerCarried: 0
+  specialPowerCarried: 1
   colPlatf: {fileID: 1422026926}
 --- !u!54 &1814425582
 Rigidbody:
@@ -30692,6 +30729,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 108
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -30906,6 +30944,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 107
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -31120,6 +31159,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 106
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -31385,6 +31425,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 107
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -31517,6 +31558,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 97
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -31649,6 +31691,7 @@ MonoBehaviour:
   canBePressed: 0
   keyPressed: 107
   isLastNote: 0
+  currentLevel: 1
   spb: {fileID: 1293257839}
   specialPowerCarried: 0
   colPlatf: {fileID: 1422026926}
@@ -31767,6 +31810,11 @@ PrefabInstance:
       propertyPath: colPlatf
       value: 
       objectReference: {fileID: 1422026926}
+    - target: {fileID: 3114348905888344135, guid: 0e2e2237972e7a44d9f17cd1e0531396,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3114348905888344137, guid: 0e2e2237972e7a44d9f17cd1e0531396,
         type: 3}
       propertyPath: m_Name

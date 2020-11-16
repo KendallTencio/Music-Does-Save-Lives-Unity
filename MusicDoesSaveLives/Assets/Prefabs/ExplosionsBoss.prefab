@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97164221526420749}
   m_Layer: 0
-  m_Name: ExplotionsBoss
+  m_Name: ExplosionsBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,6 +102,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4633661112571165309, guid: 8adaeb4c39d85544092012990bb88241,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8132661995522703033, guid: 8adaeb4c39d85544092012990bb88241,
         type: 3}
       propertyPath: m_Name
@@ -181,6 +186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4633661112571165309, guid: 8adaeb4c39d85544092012990bb88241,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8132661995522703033, guid: 8adaeb4c39d85544092012990bb88241,
         type: 3}
@@ -262,6 +272,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4633661112571165309, guid: 8adaeb4c39d85544092012990bb88241,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8132661995522703033, guid: 8adaeb4c39d85544092012990bb88241,
         type: 3}
       propertyPath: m_Name
@@ -342,6 +357,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4633661112571165309, guid: 8adaeb4c39d85544092012990bb88241,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8132661995522703033, guid: 8adaeb4c39d85544092012990bb88241,
         type: 3}
       propertyPath: m_Name
@@ -421,6 +441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4633661112571165309, guid: 8adaeb4c39d85544092012990bb88241,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8132661995522703033, guid: 8adaeb4c39d85544092012990bb88241,
         type: 3}

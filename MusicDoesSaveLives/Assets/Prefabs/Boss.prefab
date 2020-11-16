@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionsBoss: {fileID: 97164221526420748, guid: b9807df2b2e19e24b8c8c7ba3181eaf6,
     type: 3}
+  ExplosionsBoss2: {fileID: 97164221526420748, guid: d8a08338bfae69d44a81908701e838c1,
+    type: 3}
 --- !u!65 &-8197067313758379145
 BoxCollider:
   m_ObjectHideFlags: 0

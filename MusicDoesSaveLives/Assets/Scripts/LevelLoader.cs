@@ -10,6 +10,7 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 2f;
     public Text shutDownText;
     public AudioSource spaceHit;
+    public string nextScreen;
 
     // Update is called once per frame
     void Update()
@@ -33,7 +34,7 @@ public class LevelLoader : MonoBehaviour
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(nextScreen);
     }
 
 

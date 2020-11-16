@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int currentLevel;
 
+    public AudioSource successSound;
     public AudioSource bgMusic;
     public bool startPlaying;
     public BeatScroller bs;
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     public GameObject readKey;
     public GameObject keyboardKey;
     public GameObject canvasIni;
+    public GameObject bossGO;
 
     //Letter
     public AudioSource paperSound;
@@ -129,7 +131,20 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown("space"))
             {
                 spaceHit.Play();
-                SceneManager.LoadScene("GameplayScreen");
+                switch (currentLevel)
+                {
+                    case 1:
+                        SceneManager.LoadScene("Level_1");
+                        break;
+                    case 2:
+                        SceneManager.LoadScene("Level_2");
+                        break;
+                    case 3:
+                        SceneManager.LoadScene("Level_3");
+                        break;
+                    default:
+                        break;
+                }
             }
             if (Input.GetKeyDown("backspace"))
             {
@@ -152,19 +167,22 @@ public class GameManager : MonoBehaviour
                     case 1:
                         Debug.Log("Level 2 Unlocked");
                         DataHolderBehavior.instance.UpdateUnlockedPin(2);
+                        SceneManager.LoadScene("LevelSelectScreen");
                         break;
                     case 2:
                         Debug.Log("Level 3 Unlocked");
                         DataHolderBehavior.instance.UpdateUnlockedPin(3);
+                        SceneManager.LoadScene("LevelSelectScreen");
                         break;
                     case 3:
-                        //Ending
+                        Debug.Log("Credits");
+                        SceneManager.LoadScene("CreditsScreen");
                         break;
                     default:
                         break;
                 }
 
-                SceneManager.LoadScene("LevelSelectScreen");
+
             }
 
             if (Input.GetKeyDown("backspace"))
@@ -180,12 +198,14 @@ public class GameManager : MonoBehaviour
                         SceneManager.LoadScene("Level_2");
                         break;
                     case 3:
-                        //SceneManager.LoadScene("Level_3");
+                        SceneManager.LoadScene("Level_3");
                         break;
                     default:
                         break;
                 }
             }
+
+
 
             //Se apaga toda la interfaz
             hudShipStateText.gameObject.SetActive(false);
@@ -196,6 +216,7 @@ public class GameManager : MonoBehaviour
 
             bgMusic.Stop();
             endLevelMusic.SetActive(true);
+            
         }
 
         if (!gameOver)
@@ -256,12 +277,21 @@ public class GameManager : MonoBehaviour
         multiText.text = "Multiplier: x" + currentMultiplier;
     }
 
-    public void endLevel()  //Se puede mejorar, está provicional
+    public void endLevel(int numLevel)  //Se puede mejorar, está provicional
     {
-        gameEnded = true;
-        putOffIniObjects();
-        screenKeyboard.SetActive(false);
-        StartCoroutine(canvaForSeconds());
+        if(numLevel == 3)
+        {
+            bossGO.SetActive(true);
+            StartCoroutine(bossTimer());
+        }
+        else
+        {
+            spb.lightSpeedActivated();
+            gameEnded = true;
+            putOffIniObjects();
+            screenKeyboard.SetActive(false);
+            StartCoroutine(canvaForSeconds());
+        }
     }
 
     private IEnumerator canvaForSeconds()
@@ -331,5 +361,18 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.55f);
         thunderPowerUp1.SetActive(false);
         thunderPowerUp2.SetActive(false);
+    }
+
+    private IEnumerator bossTimer()
+    {
+        bgMusic.Stop();
+        yield return new WaitForSeconds(11f);
+        successSound.Play();
+        yield return new WaitForSeconds(5f);
+        spb.lightSpeedActivated();
+        gameEnded = true;
+        putOffIniObjects();
+        screenKeyboard.SetActive(false);
+        StartCoroutine(canvaForSeconds());
     }
 }
