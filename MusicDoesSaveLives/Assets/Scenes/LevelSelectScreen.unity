@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAutomatic: 0
-  SceneName: GameplayScreen
+  SceneName: Level_3
   pinNumber: 3
   pinName: Joseke
   enterLevel: 0
