@@ -12,6 +12,11 @@ public class LevelLoader : MonoBehaviour
     public AudioSource spaceHit;
     public string nextScreen;
 
+    void Start()
+    {
+        bgMusicBehavior.instance.PlayMusic();
+    }
+
     // Update is called once per frame
     void Update()
     {

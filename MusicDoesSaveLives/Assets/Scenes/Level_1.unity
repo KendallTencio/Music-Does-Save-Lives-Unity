@@ -20031,6 +20031,7 @@ MonoBehaviour:
   brokenGlass1: {fileID: 1204207137}
   brokenGlass2: {fileID: 127278595}
   hudShipStateText: {fileID: 480818411}
+  Bar: {fileID: 1757583045}
   spb: {fileID: 1293257839}
   thunderPowerUp1: {fileID: 721786515}
   thunderPowerUp2: {fileID: 1451563092}
@@ -26174,7 +26175,6 @@ MonoBehaviour:
   shield: {fileID: 672176851}
   lightSpeedGO: {fileID: 93675325}
   mgVaporwave: {fileID: 1765284858}
-  pBehav: {fileID: 295009457}
 --- !u!1 &1307566034
 GameObject:
   m_ObjectHideFlags: 0

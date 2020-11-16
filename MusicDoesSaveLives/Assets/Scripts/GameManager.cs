@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject brokenGlass1;
     public GameObject brokenGlass2;
     public Text hudShipStateText;
+    public GameObject Bar;
 
     //SpecialPower
     public SpecialPowerBehavior spb;
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Lives saved: 0";
         currentMultiplier = 1;
 
+        Bar.SetActive(false);
         gameOverScreen.SetActive(false);
         levelEndedScreen.SetActive(false);
         endingCanvas.SetActive(false);
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
+                Bar.SetActive(true);
                 startPlaying = true;
                 bs.hasStarted = true;
                 putOffIniObjects();
@@ -160,17 +163,17 @@ public class GameManager : MonoBehaviour
             {
                 spaceHit.Play();
 
-                manageMusicLevelSelection(true);
-
                 switch (currentLevel)
                 {
                     case 1:
                         Debug.Log("Level 2 Unlocked");
+                        manageMusicLevelSelection(true);
                         DataHolderBehavior.instance.UpdateUnlockedPin(2);
                         SceneManager.LoadScene("LevelSelectScreen");
                         break;
                     case 2:
                         Debug.Log("Level 3 Unlocked");
+                        manageMusicLevelSelection(true);
                         DataHolderBehavior.instance.UpdateUnlockedPin(3);
                         SceneManager.LoadScene("LevelSelectScreen");
                         break;
