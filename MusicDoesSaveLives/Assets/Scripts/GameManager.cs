@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     //Letter
     public AudioSource paperSound;
+    public GameObject grannyObject;
     private bool letterOn = false;
 
     //Screen Keyboard
@@ -106,11 +107,13 @@ public class GameManager : MonoBehaviour
             if (letterOn && Input.GetKeyDown("r"))
             {
                 letterOn = false;
+                grannyObject.SetActive(false);
                 paperSound.Play();
             }
             else if (!letterOn && Input.GetKeyDown("r"))
             {
                 letterOn = true;
+                grannyObject.SetActive(true);
                 paperSound.Play();
             }
             if (screenKeyboardOn && Input.GetKeyDown("t"))
@@ -234,6 +237,7 @@ public class GameManager : MonoBehaviour
         readKey.SetActive(false);
         keyboardKey.SetActive(false);
         canvasIni.SetActive(false);
+        grannyObject.SetActive(false);
     }
 
     public void manageMusicLevelSelection(bool playMusic)

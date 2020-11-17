@@ -464,6 +464,11 @@ PrefabInstance:
       propertyPath: nextScreen
       value: TextScreen
       objectReference: {fileID: 0}
+    - target: {fileID: -6192317110379242860, guid: 1790cdadbb399454e86117a6dbc73836,
+        type: 3}
+      propertyPath: nameOfScreen
+      value: Credits
+      objectReference: {fileID: 0}
     - target: {fileID: 5168145564518834222, guid: 1790cdadbb399454e86117a6dbc73836,
         type: 3}
       propertyPath: m_LocalPosition.x

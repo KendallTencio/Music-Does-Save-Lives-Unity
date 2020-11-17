@@ -11,10 +11,19 @@ public class LevelLoader : MonoBehaviour
     public Text shutDownText;
     public AudioSource spaceHit;
     public string nextScreen;
+    public string nameOfScreen;
 
     void Start()
     {
-        bgMusicBehavior.instance.PlayMusic();
+        if(nameOfScreen.Equals("Credits") || nameOfScreen.Equals("First"))
+        {
+            bgMusicBehavior.instance.StopMusic();
+        }
+        else if (nameOfScreen.Equals("Main"))
+        {
+            bgMusicBehavior.instance.PlayMusic();
+        }
+        
     }
 
     // Update is called once per frame
